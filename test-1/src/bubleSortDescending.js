@@ -1,4 +1,4 @@
-const bubbleSort = (arr = []) => {
+const bubleSortDescending = (arr = []) => {
     if (!arr || !arr?.length) {
         return [];
     }
@@ -16,4 +16,4 @@ const bubbleSort = (arr = []) => {
     return arr;
 }
 
-module.exports = bubbleSort;
+module.exports = bubleSortDescending;
