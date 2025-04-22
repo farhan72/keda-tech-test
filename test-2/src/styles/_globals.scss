@@ -1,0 +1,16 @@
+@use './mixins/responsive';
+
+.container {
+    padding: 4rem 9rem;
+    max-width: 100% !important;
+
+    @include respond('sm') {
+        padding: 2rem;
+    }
+}
+
+.error {
+    color: #e53e3e;
+    margin-top: 4px;
+    font-size: 0.875rem;
+}

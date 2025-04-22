@@ -1,0 +1,16 @@
+.contact {
+    background-color: $bg-soft-blue;
+}
+
+.btn-send {
+    background-color: #096DD9;
+    padding: 14px 16px;
+    color: #fff;
+    border: 1px solid #096DD9;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        background-color: transparent;
+        color: #096DD9;
+    }
+}

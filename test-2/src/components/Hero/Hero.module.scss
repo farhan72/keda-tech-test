@@ -1,0 +1,95 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 9rem;
+  background: #fff;
+  color: $color-text-dark;
+  min-height: 100vh;
+  margin-top: -127px;
+  position: relative;
+
+  .blob-bg {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -184px;
+    left: -90px;
+    transform: rotate(80deg);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+  }
+
+  &::after {
+    background: url("images/bg/wave.png") no-repeat right center / contain;
+    width: 50%;
+    height: 600px;
+    bottom: -200px;
+    right: 0;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 1;
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      font-weight: 200;
+      line-height: 1.6;
+      font-weight: 200;
+    }
+
+    .description {
+      display: flex;
+      justify-content: end;
+
+      > p {
+        max-width: 50%;
+        text-align: center;
+      }
+    }
+
+    .illustration {
+      width: 400px;
+      height: 300px;
+      background: url("/images/illustration-metrics.png") no-repeat center;
+      background-size: contain;
+      z-index: 1;
+  
+      @media (max-width: 768px) {
+        width: 300px;
+        height: 200px;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  @include respond('sm') {
+    flex-direction: column;
+    padding: 3rem 2rem;
+    text-align: center;
+
+    &::after {
+      bottom: -236px;
+      width: 100%;
+    }
+
+    p {
+      font-size: 1.1rem !important;
+    }
+
+    .description {
+      > p {
+        margin-top: 10rem;
+        max-width: 100% !important;
+        text-align: left !important;
+      }
+    }
+  }
+}

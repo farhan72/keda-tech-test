@@ -1,0 +1,36 @@
+.modal-header {
+  background: linear-gradient(to right, #5bb0ff, #007aff);
+}
+
+.modal-body {
+  background-color: #fff;
+  padding: 24px;
+
+  .text-blue {
+    color: #1890ff;
+  }
+  
+  .text-hover-blue:hover {
+    color: #40a9ff;
+  }
+
+  button.btn-login {
+    background: linear-gradient(to right, #4da8ff, #007bff);
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 8px 16px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background 0.4s ease, transform 0.3s ease;
+    background-size: 200% auto;
+
+    &:hover {
+      background-position: right center;
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    }
+  }
+}

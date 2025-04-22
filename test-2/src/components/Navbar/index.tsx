@@ -1,0 +1,95 @@
+import { useEffect, useState } from "react";
+import styles from "./Navbar.module.scss";
+import NavLinks from "./NavLinks";
+import { Menu, X } from "lucide-react";
+
+interface INavbarProps {
+  openLoginModal: () => void;
+}
+const Index: React.FC<INavbarProps> = ({ openLoginModal }) => {
+  const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const y = window.scrollY;
+
+      if (y > 20 && !scrolled) {
+        setScrolled(true);
+      }
+
+      if (y < 5 && scrolled) {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrolled]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <div
+      className={`${styles["navbar-wrapper"]}${
+        scrolled ? ` ${styles["scrolled"]}` : ""
+      }`}
+    >
+      <div className={styles["brand"]}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={30}
+          height={30}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M5 16V9h14V2H5l14 14h-7m-7 0 7 7v-7m-7 0h7" />
+        </svg>
+        <span>Home</span>
+      </div>
+      {isMobile && (
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          className={styles["btn-hamburger"]}
+        >
+          <Menu
+            size={24}
+            className={`absolute transition-all duration-300 ${
+              isHovered || isOpen
+                ? "opacity-0 rotate-90 scale-0"
+                : "opacity-100 rotate-0 scale-100"
+            }`}
+          />
+          <X
+            size={24}
+            className={`transition-all duration-300 ${
+              isHovered || isOpen
+                ? "opacity-100 rotate-0 scale-100"
+                : "opacity-0 -rotate-90 scale-0"
+            }`}
+          />
+        </button>
+      )}
+      <NavLinks openLoginModal={openLoginModal} />
+    </div>
+  );
+};
+
+export default Index;
