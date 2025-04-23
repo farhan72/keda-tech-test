@@ -42,7 +42,7 @@ test-2/
 ### 🧪 test-1 - Proyek Algoritma (`src/`)
 
 ```bash
-cd test-1/src
+cd test-1
 npm install
 npm test
 ```
