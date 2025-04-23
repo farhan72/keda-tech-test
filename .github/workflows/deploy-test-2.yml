@@ -34,6 +34,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          publish_dir: ./test-2/dist
+          publish_dir: ./dist
           publish_branch: gh-pages
           destination_dir: test-2
