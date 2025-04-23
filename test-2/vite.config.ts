@@ -4,7 +4,6 @@ import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/keda-tech-test/',
   plugins: [react()],
   server: {
     host: "0.0.0.0",
