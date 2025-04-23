@@ -47,14 +47,6 @@ npm install
 npm test
 ```
 
-### 💻 test-1 - Proyek Frontend (`dist/`)
-
-```bash
-cd test-1/dist
-npm install
-npm run dev
-```
-
 ### 💻 test-2 - Proyek Frontend Vite + Tailwind
 
 ```bash
