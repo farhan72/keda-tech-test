@@ -15,6 +15,7 @@ Frontend test project untuk KeDA menggunakan stack modern dan ringan berbasis Re
 - ✅ **Formik + Yup** — Form handling & validation
 - 🧼 **ESLint + Prettier** — Code linting & formatting
 - 🧪 **TypeScript** — Superset JavaScript dengan type safety
+- 🎞️ **Framer Motion** — Library animasi modern berbasis React
 
 ---
 
@@ -23,6 +24,7 @@ Frontend test project untuk KeDA menggunakan stack modern dan ringan berbasis Re
 - **Vite**: Build tool modern yang jauh lebih cepat dari CRA (Create React App), cocok untuk aplikasi kecil-menengah.
 - **TailwindCSS**: Mempercepat styling tanpa menulis banyak CSS manual.
 - **Formik + Yup**: Mengelola form dan validasi dengan cara deklaratif dan clean.
+- **Framer Motion**: Memberikan pengalaman pengguna yang lebih dinamis dan menarik. Animasi diterapkan saat elemen masuk ke viewport atau saat berpindah antar halaman, membuat UI terasa lebih hidup.
 
 ---
 

@@ -1,5 +1,6 @@
 import { lazy, useEffect, useState } from 'react';
 import scrollToSectionByIdUtils from './utils/scrollToSectionByIdUtils';
+import AnimatedWrapper from './components/ui/AnimatedWrapper';
 
 const Navbar = lazy(() => import('./components/Navbar'));
 const About = lazy(() => import('./components/About'));
@@ -30,15 +31,20 @@ function App() {
   return (
     <>
       <Navbar openLoginModal={openLoginModal} />
-      <Hero />
-      <About />
-      <Pricing />
-      <Contact />
+      <AnimatedWrapper>
+        <Hero />
+      </AnimatedWrapper>
+      <AnimatedWrapper>
+        <About />
+      </AnimatedWrapper>
+      <AnimatedWrapper>
+        <Pricing />
+      </AnimatedWrapper>
+      <AnimatedWrapper>
+        <Contact />
+      </AnimatedWrapper>
 
-      <LoginModal
-        isOpen={isLoginModalOpen}
-        onRequestClose={closeLoginModal}
-      />
+      <LoginModal isOpen={isLoginModalOpen} onRequestClose={closeLoginModal} />
     </>
   );
 }

@@ -40,13 +40,20 @@ const Index: React.FC<INavbarProps> = ({ openLoginModal }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div
       className={`${styles["navbar-wrapper"]}${
         scrolled ? ` ${styles["scrolled"]}` : ""
       }`}
     >
-      <div className={styles["brand"]}>
+      <button className={styles["brand"]} onClick={scrollToTop}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width={30}
@@ -61,7 +68,7 @@ const Index: React.FC<INavbarProps> = ({ openLoginModal }) => {
           <path d="M5 16V9h14V2H5l14 14h-7m-7 0 7 7v-7m-7 0h7" />
         </svg>
         <span>Home</span>
-      </div>
+      </button>
       {isMobile ? (
         <>
           <button
@@ -89,7 +96,11 @@ const Index: React.FC<INavbarProps> = ({ openLoginModal }) => {
             />
           </button>
 
-          <MobileMenu onClose={() => setIsOpenMobileMenu(false)} openLoginModal={openLoginModal} isOpen={isOpenMobileMenu}/>
+          <MobileMenu
+            onClose={() => setIsOpenMobileMenu(false)}
+            openLoginModal={openLoginModal}
+            isOpen={isOpenMobileMenu}
+          />
         </>
       ) : (
         <NavLinks openLoginModal={openLoginModal} />
