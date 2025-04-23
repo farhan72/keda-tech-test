@@ -18,7 +18,7 @@ const Index: React.FC<IPricingCardProps> = ({ isAnnual, plan }) => {
     <div
       className={`flex flex-col h-full sm:w-full p-6 rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl ${
         plan.popular
-          ? "border-2 border-blue-500 relative scale-105 bg-white z-10"
+          ? "border-2 border-blue-500 relative scale-105 bg-white z-5"
           : "border border-gray-200 bg-white"
       }`}
     >

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PricingCard, Title } from "../ui";
 import styles from "./Pricing.module.scss";
 import PricingToggle from "./PricingToggle";
-import { IPricingPlan } from "../ui/PricingCard/types";
+import { IPricingPlan } from "./PricingCard/types";
 
 const plans: IPricingPlan[] = [
   {
