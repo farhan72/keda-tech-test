@@ -5,7 +5,7 @@ on:
     branches: [master] # or your default branch
     paths:
       - 'test-2/**'
-      - '.github/workflows/deploy-test-2.yml'
+      - '.github/workflows/main.yml'
 
 jobs:
   build-and-deploy:
