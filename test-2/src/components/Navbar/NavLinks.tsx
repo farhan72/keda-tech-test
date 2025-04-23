@@ -34,7 +34,7 @@ const NavLinks: React.FC<INavLinksProps> = ({ openLoginModal, onClickMenuItem })
         </li>
       ))}
       <li>
-        <button className={styles["btn-login"]} onClick={openLoginModal}>
+        <button type='button' className={styles["btn-login"]} onClick={openLoginModal}>
           Login
         </button>
       </li>
