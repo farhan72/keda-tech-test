@@ -5,12 +5,11 @@ Repositori ini terdiri dari dua proyek utama:
 1. **`test-1/`**  
    Berisi dua sub-proyek:
    - `src/`: Implementasi algoritma dan unit test menggunakan JavaScript.
-   - `dist/`: Proyek frontend menggunakan Vite dan Tailwind CSS.
-   - Dokumentasi lengkap: [test-1/README.md](README.md)
+   - Dokumentasi lengkap: [README.md](test-1/README.md)
 
 2. **`test-2/`**  
    Proyek frontend lain yang juga menggunakan Vite dan Tailwind CSS, dengan struktur konfigurasi TypeScript yang lebih modular.
-   - Dokumentasi lengkap: [test-2/README.md](README.md)
+   - Dokumentasi lengkap: [README.md](test-2/README.md)
 
 ---
 
@@ -23,7 +22,6 @@ test-1/
 │   ├── __test__/          # Unit tests
 │   ├── *.js               # Fungsi-fungsi JS
 │
-├── dist/                  # Proyek Vite + Tailwind (Frontend)
 │
 ├── README.md              # Dokumentasi utama
 

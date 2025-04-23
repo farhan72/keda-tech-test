@@ -2,7 +2,7 @@
 
 Frontend test project untuk KeDA menggunakan stack modern dan ringan berbasis React & Vite.
 
-🌐 **Live Demo**: [https://keda-tech-test.vercel.app/](Demo)
+🌐 **Live Demo**: [Demo](https://keda-tech-test.vercel.app/)
 
 ---
 
