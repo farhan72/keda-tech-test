@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import styles from "./Navbar.module.scss";
 import NavLinks from "./NavLinks";
 import { Menu, X } from "lucide-react";
+import MobileMenu from "./MobileMenu";
 
 interface INavbarProps {
   openLoginModal: () => void;
 }
 const Index: React.FC<INavbarProps> = ({ openLoginModal }) => {
   const [scrolled, setScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -61,33 +62,38 @@ const Index: React.FC<INavbarProps> = ({ openLoginModal }) => {
         </svg>
         <span>Home</span>
       </div>
-      {isMobile && (
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-          className={styles["btn-hamburger"]}
-        >
-          <Menu
-            size={24}
-            className={`absolute transition-all duration-300 ${
-              isHovered || isOpen
-                ? "opacity-0 rotate-90 scale-0"
-                : "opacity-100 rotate-0 scale-100"
-            }`}
-          />
-          <X
-            size={24}
-            className={`transition-all duration-300 ${
-              isHovered || isOpen
-                ? "opacity-100 rotate-0 scale-100"
-                : "opacity-0 -rotate-90 scale-0"
-            }`}
-          />
-        </button>
+      {isMobile ? (
+        <>
+          <button
+            onClick={() => setIsOpenMobileMenu(!isOpenMobileMenu)}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            aria-label={isOpenMobileMenu ? "Close menu" : "Open menu"}
+            className={styles["btn-hamburger"]}
+          >
+            <Menu
+              size={24}
+              className={`absolute transition-all duration-300 ${
+                isHovered || isOpenMobileMenu
+                  ? "opacity-0 rotate-90 scale-0"
+                  : "opacity-100 rotate-0 scale-100"
+              }`}
+            />
+            <X
+              size={24}
+              className={`transition-all duration-300 ${
+                isHovered || isOpenMobileMenu
+                  ? "opacity-100 rotate-0 scale-100"
+                  : "opacity-0 -rotate-90 scale-0"
+              }`}
+            />
+          </button>
+
+          <MobileMenu onClose={() => setIsOpenMobileMenu(false)} openLoginModal={openLoginModal} isOpen={isOpenMobileMenu}/>
+        </>
+      ) : (
+        <NavLinks openLoginModal={openLoginModal} />
       )}
-      <NavLinks openLoginModal={openLoginModal} />
     </div>
   );
 };

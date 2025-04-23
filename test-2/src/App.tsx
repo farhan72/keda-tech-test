@@ -1,4 +1,5 @@
-import { lazy, useState } from 'react';
+import { lazy, useEffect, useState } from 'react';
+import scrollToSectionByIdUtils from './utils/scrollToSectionByIdUtils';
 
 const Navbar = lazy(() => import('./components/Navbar'));
 const About = lazy(() => import('./components/About'));
@@ -18,6 +19,13 @@ function App() {
   const closeLoginModal = () => {
     setIsLoginModalOpen(false);
   };
+
+  useEffect(() => {
+    const hash = window.location.hash; // includes the "#" symbol
+    const sectionId = hash.replace("#", "");
+
+    scrollToSectionByIdUtils(sectionId);
+  }, []);
 
   return (
     <>

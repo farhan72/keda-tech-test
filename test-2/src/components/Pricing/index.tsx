@@ -64,7 +64,7 @@ const Index = () => {
   };
 
   return (
-    <section className={`container ${styles["pricing"]}`}>
+    <section className={`container ${styles["pricing"]}`} id="pricing">
       <div className={styles["header"]}>
         <Title name="Choose a package according to your needs" />
         <p>
