@@ -8,7 +8,7 @@ Repositori ini terdiri dari dua proyek utama:
    - Dokumentasi lengkap: [README.md](test-1/README.md)
 
 2. **`test-2/`**  
-   Proyek frontend lain yang juga menggunakan Vite dan Tailwind CSS, dengan struktur konfigurasi TypeScript yang lebih modular.
+   Proyek frontend lain yang menggunakan Vite dan Tailwind CSS, dengan struktur konfigurasi TypeScript yang lebih modular.
    - Dokumentasi lengkap: [README.md](test-2/README.md)
 
 ---
